@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f8f9fa;
+		}
+		.container {
+			margin-top: 50px;
+		}
+		.card {
+			border: none;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			transition: transform 0.3s ease;
+		}
+		.card:hover {
+			transform: translateY(-5px);
+		}
+		.card-body {
+			text-align: center;
+		}
+		.card-title {
+			font-size: 1.5rem;
+			margin-top: 15px;
+		}
+		.icon {
+			font-size: 3rem;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 mb-4">
+			<a href="/admin/loadAddProduct" class="text-decoration-none text-dark">
+				<div class="card bg-primary text-white">
+					<div class="card-body">
+						<i class="fas fa-plus-circle icon"></i>
+						<h5 class="card-title">Add Product</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-4 mb-4">
+			<a href="/admin/category" class="text-decoration-none text-dark">
+				<div class="card bg-warning text-dark">
+					<div class="card-body">
+						<i class="fas fa-list-alt icon"></i>
+						<h5 class="card-title">Add Category</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-4 mb-4">
+			<a href="/admin/produits" class="text-decoration-none text-dark">
+				<div class="card bg-success text-white">
+					<div class="card-body">
+						<i class="fas fa-eye icon"></i>
+						<h5 class="card-title">View Product</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit Category</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			background-color: #f8f9fa;
+		}
+		.card {
+			border: none;
+			border-radius: 15px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		}
+		.card-header {
+			background-color: #343a40;
+			color: white;
+			border-radius: 15px 15px 0 0;
+		}
+		.card-body {
+			background-color: #e9ecef;
+		}
+		label {
+			color: #495057;
+		}
+		input[type="text"], input[type="file"] {
+			border-radius: 10px;
+		}
+		.btn-primary {
+			background-color: #007bff;
+			border: none;
+			border-radius: 10px;
+		}
+		.btn-primary:hover {
+			background-color: #0056b3;
+		}
+	</style>
+</head>
+<body>
+<section>
+	<div class="container-fluid py-5 mt-5">
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+				<div class="card">
+					<div class="card-header text-center">
+						<h4 class="mb-0">Edit Category</h4>
+					</div>
+					<div class="card-body">
+						<form action="/admin/updateCategory" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="id" th:value="${category.id}">
+							<div class="form-group">
+								<label>Enter Category</label>
+								<input type="text" name="name" th:value="${category.name}" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Status</label>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" th:checked="${category.isActive==true}" value="true" name="isActive" id="flexRadioDefault1">
+									<label class="form-check-label" for="flexRadioDefault1">Active</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="isActive" th:checked="${category.isActive==false}" value="false" id="flexRadioDefault2">
+									<label class="form-check-label" for="flexRadioDefault2">Inactive</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Upload Image</label>
+								<input type="file" name="file" class="form-control">
+							</div>
+							<img th:src="@{'/img/category_img/'+${category.imageName}}" width="100px" height="100px">
+							<button class="btn btn-primary btn-block mt-3">Update</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>
